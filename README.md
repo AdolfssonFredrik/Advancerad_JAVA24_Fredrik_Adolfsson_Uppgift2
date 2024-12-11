@@ -1,14 +1,10 @@
 # Student system
 
---- 
-
-
 ## About
 
 This is a console based system for adding, removing, displaying and storing students using studentID as an identifier. The program is written in Java and is based around a singelton for handling the students. It also stores its data in JSON files.
 
 
----
 
 ## Getting started
 
@@ -24,14 +20,13 @@ git clone https://github.com/AdolfssonFredrik/Advancerad_JAVA24_Fredrik_Adolfsso
 4. Open the project in your ide of choice and hit run.
 5. Done!
 
----
 
 
 ## Explination
 
 ### ClassList
 
-- This class is a singelton and is used for storing and handling the students. The students are stored in a HashMap with the studentID as the ket and the student object as the value. Using this you can get access to the student object with its properties and methods just using the id as an identifier.
+- This class is a singelton and is used for storing and handling the students. The students are stored in a HashMap with the studentID as the ket and the student object as the value. The data is loaded in when the program starts and is stored when the program exits. Using this you can get access to the student object with its properties and methods just using the id as an identifier. 
 
 ### Student
 
@@ -48,5 +43,13 @@ git clone https://github.com/AdolfssonFredrik/Advancerad_JAVA24_Fredrik_Adolfsso
   - validating name: "[A-Z]"
   - validating studentID: "^\\d+$"
 
+### ReadFromFile
 
----
+- This class is responsible for reading in student data from the Students.JSON file. It does this using the Jackson library.
+
+### SaveToFile
+- This class is responsible for writing student data to the Students.JSON file using the jackson library.
+
+### Main
+
+- This is the main class from where the program is run. It calls the method for loading in the student data from the Students.JSON file and starting the main menu.
